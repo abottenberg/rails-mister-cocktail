@@ -1,12 +1,25 @@
 <div class="container">
-  <h1>Mister</h1>
-  <h2>Cocktail</h2>
+  <div class="headings">
+    <h1>Mister</h1>
+    <h2>Cocktail</h2>
+  </div>
 
-  <% @cocktails.each do |cocktail| %>
-    <%= link_to cocktail_path(cocktail) do %>
-      <p><%= cocktail.name %></p>
+  <div class="cards">
+    <% @cocktails.each do |cocktail| %>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url(<%= cl_image_path(cocktail.photo.key) %>)">
+        <div class="cocktail_link">
+          <%= link_to cocktail_path(cocktail) do %>
+            <button class="enter_cocktail"><%= cocktail.name %></button>
+          <% end %>
+        </div>
+      </div>
     <% end %>
-  <% end %>
+</div>
+
+
+
 
   <%= link_to "Add a cocktail", new_cocktail_path %>
 </div>
+
+

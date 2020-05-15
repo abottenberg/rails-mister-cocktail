@@ -1,0 +1,19 @@
+<div class="container d-flex flex-column justify-content-between">
+  <div class="headings">
+    <h1>Mister</h1>
+    <h2>Cocktail</h2>
+  </div>
+
+  <div class="main_image">
+    <%= cl_image_tag("cocktail_home", :class => "img_preview") %>
+  </div>
+
+  <div class="enter_link">
+    <%= link_to cocktails_path do %>
+      <button class="enter">ENTER</button>
+    <% end %>
+  </div>
+
+
+
+</div>
