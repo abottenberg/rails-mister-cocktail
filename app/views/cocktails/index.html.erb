@@ -4,6 +4,12 @@
     <h2>Cocktail</h2>
   </div>
 
+  <div class="new_cocktail">
+    <%= link_to new_cocktail_path do %>
+      <button class="btn_new_cocktail"><%= "Add cocktail" %></button>
+    <% end %>
+  </div>
+
   <div class="cards">
     <% @cocktails.each do |cocktail| %>
       <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url(<%= cl_image_path(cocktail.photo.key) %>)">
@@ -14,12 +20,8 @@
         </div>
       </div>
     <% end %>
-</div>
+  </div>
 
-
-
-
-  <%= link_to "Add a cocktail", new_cocktail_path %>
 </div>
 
 
