@@ -1,7 +1,7 @@
 <div class="container">
   <div class="new_cocktail">
     <%= link_to new_cocktail_path do %>
-      <button class="btn_new_cocktail"><%= "Add cocktail" %></button>
+      <button class="btn_white"><%= "Add cocktail" %></button>
     <% end %>
   </div>
 
@@ -17,7 +17,7 @@
       <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url(<%= cl_image_path(cocktail.photo.key) %>)">
         <div class="cocktail_link">
           <%= link_to cocktail_path(cocktail) do %>
-            <button class="enter_cocktail"><%= cocktail.name %></button>
+            <button class="btn_white_md"><%= cocktail.name %></button>
           <% end %>
         </div>
       </div>
