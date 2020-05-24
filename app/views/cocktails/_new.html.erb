@@ -1,6 +1,6 @@
-<%= simple_form_for ([@cocktail, Dose.new]) do |f| %>
-  <%= f.association :ingredient %>
-  <%= f.input :description %>
+<%= simple_form_for (Cocktail.new) do |f| %>
+  <%= f.input :name %>
+  <%= f.input :photo, as: :file %>
   <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
   <%= f.button :submit, class: "btn btn-primary" %>
 <% end %>
