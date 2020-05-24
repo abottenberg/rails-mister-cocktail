@@ -14,13 +14,23 @@
 
   <div class="cards">
     <% @cocktails.each do |cocktail| %>
-      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url(<%= cl_image_path(cocktail.photo.key) %>)">
-        <div class="cocktail_link">
-          <%= link_to cocktail_path(cocktail) do %>
-            <button class="btn_white_md"><%= cocktail.name %></button>
-          <% end %>
+      <% if cocktail.photo.present? %>
+        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url(<%= cl_image_path(cocktail.photo.key) %>)">
+          <div class="cocktail_link">
+            <%= link_to cocktail_path(cocktail) do %>
+              <button class="btn_white_md"><%= cocktail.name %></button>
+            <% end %>
+          </div>
         </div>
-      </div>
+      <% else %>
+        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url(<%= cl_image_tag("cocktail_home", :class => "img_preview") %>)">
+          <div class="cocktail_link">
+            <%= link_to cocktail_path(cocktail) do %>
+              <button class="btn_white_md"><%= cocktail.name %></button>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
     <% end %>
   </div>
 
